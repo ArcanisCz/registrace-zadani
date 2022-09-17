@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './style.css';
+import userIcon from './img/user-solid.svg'
 
 const Registation = () => {
 
@@ -10,45 +11,19 @@ const Registation = () => {
         passwordConfirm: "",
       });
 
-    // const [email, setEmail] = useState(null);
-    // const [username, setUsername] = useState(null);
-    // const [password,setPassword] = useState(null);
-    // const [confirmPassword,setConfirmPassword] = useState(null);
-
-    // const handleInputChange = (e) => {
-    //     const {id , value} = e.target;
-    //     if(id === "email"){
-    //         setEmail(value);
-    //     }
-    //     if(id === "name"){
-    //         setUsername(value);
-    //     }
-    //     if(id === "password"){
-    //         setPassword(value);
-    //     }
-    //     if(id === "confirmPassword"){
-    //         setConfirmPassword(value);
-    //     }
-
-    // }
-
     useEffect(() => {
         if (user.email.indexOf("@") >= 0 && user.username.length === 0) {
           setUser({ ...user, username: user.email.substring(0, user.email.indexOf("@")) });
         }
       }, [user.email]);
-    
-
-    const handleSubmit = () => {
-        console.log(user);
-        // console.log({email,username,password,confirmPassword});
-    }
-
 
      return (
         <>
         <div className="header">
-            <h1 className="header-headline">REGISTRATION</h1>
+            <h1>REGISTRATION</h1>
+            <div className="userIcon">
+                <img src={userIcon} />
+            </div>
         </div>
 
         <div className="form">
@@ -57,10 +32,11 @@ const Registation = () => {
                     <label className="form__label" htmlFor="email" hidden>Email Address </label>
                     <input
                         className="form__input"
-                        type="email" id="email"
+                        type="email"
+                        id="email"
                         name="email"
-                        alue={user.email} 
-                        onChange={(e) => setUser({ ...user, email: e.target.value })} 
+                        value={user.email} 
+                        onChange={(e) => setUser({ ...user, email: e.target.value })}
                         placeholder="Email Address"/>
                 </div>
                 <div className="username">
@@ -95,11 +71,11 @@ const Registation = () => {
                         onChange={(e) => setUser({ ...user, passwordConfirm: e.target.value })}
                         placeholder="Confirm Password"/>
                 </div>
+               
+                <div className="button">
+                    <button className="form__button" type="submit" onClick={(e) => {console.log(user)}}>Register</button>
+                </div>
             </form>
-        </div>
-
-        <div className="footer">
-            <button className="button" type="submit" onClick={handleSubmit}>REGISTER</button>
         </div>
         </>
      )
