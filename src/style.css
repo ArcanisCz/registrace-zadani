@@ -4,26 +4,104 @@
   box-sizing: border-box;
 }
 
+html,body {
+  margin: 0;
+}
+
 html {
+  font-family: 'Open Sans', sans-serif;
+  background: rgb(237, 236, 241);
+
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: #545760;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 36px;
+}
+
+.form {
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 30px;
+  background: #FCFCFE;
+  border-radius: 10px;
+  box-shadow: -10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.form__img {
+   margin-top: -70px;
+   border-radius: 50%;
+   width: 100px;
+   height: 100px;
+   background: #fff;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-left: auto;
+   margin-right: auto;
+   margin-bottom: 30px;
+   box-shadow: -10px 10px 15px rgba(0, 0, 0, 0.3), rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+   position: relative;
+   z-index: 2;
+}
+
+.form__user-ico {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: block;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.2) 0px 32px 16px;
+}
+
+.form input {
+  background: rgb(78, 99, 118);
+  padding: 10px;
+  border: 0;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.form input::placeholder {
+  color: #fff;
   font-family: 'Open Sans', sans-serif;
 }
 
-.container {
-  max-width: 26rem;
-  margin-right: auto;
+.form input:focus {
+  outline: 1px solid #3d3c42;
+}
+
+.form__button {
+  border-radius: 10px;
+  display: block;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  width: fit-content;
   margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  color: #fff;
+  background: #4e6376;
+  border: 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 4rem;
-}
+.form__button:hover {
+  background: #FCFCFE;
+  color: #4e6376;
+  cursor: pointer;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;}
 
-.logo {
-  width: 10rem;
-  height: 10rem;
-  background-image: url(./img/rocket.svg);
-  background-size: contain;
-}
