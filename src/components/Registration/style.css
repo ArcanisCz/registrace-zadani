@@ -1,11 +1,11 @@
-.formContent input{
+.form-content input{
     display: block;
     justify-content: center;
     align-items: center;
     margin: 10px 20px
 }
 
-.formButton button {
+.footer {
   
     margin: 10px 20px
 }
