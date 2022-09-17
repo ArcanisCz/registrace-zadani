@@ -11,6 +11,11 @@ const Registation = () => {
         passwordConfirm: "",
       });
 
+    const handleSubmit= (e) => {
+        e.preventDefault();
+        console.log(user);
+    };
+
     useEffect(() => {
         if (user.email.indexOf("@") >= 0 && user.username.length === 0) {
           setUser({ ...user, username: user.email.substring(0, user.email.indexOf("@")) });
@@ -20,14 +25,14 @@ const Registation = () => {
      return (
         <>
         <div className="header">
-            <h1>REGISTRATION</h1>
+            <h1>Registration</h1>
             <div className="userIcon">
-                <img src={userIcon} />
+                <img src={userIcon} alt="user icon"/>
             </div>
         </div>
 
-        <div className="form">
-            <form className="form-content">
+        <div className="body">
+            <form className="form" onSubmit={handleSubmit}>
                 <div className="email">
                     <label className="form__label" htmlFor="email" hidden>Email Address </label>
                     <input
@@ -73,7 +78,7 @@ const Registation = () => {
                 </div>
                
                 <div className="button">
-                    <button className="form__button" type="submit" onClick={(e) => {console.log(user)}}>Register</button>
+                    <button className="form__button" type="submit">Register</button>
                 </div>
             </form>
         </div>

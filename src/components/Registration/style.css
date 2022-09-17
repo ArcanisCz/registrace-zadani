@@ -11,6 +11,7 @@ h1 {
     font-size: 1.5rem;
     font-weight: 600;
     color: #65737e;
+    text-transform: uppercase;
 }
 
 .userIcon {
@@ -25,7 +26,7 @@ h1 {
     background-color: #ffffff;
 }
 
-.form {
+.body {
     position: relative;
     top: -4rem;
     height: 30rem;
@@ -42,7 +43,7 @@ h1 {
     z-index: 1;
 }
 
-.form-content input {
+.form input {
     width: 15rem;
     height: 2.5rem;
     margin: 0.5rem;
