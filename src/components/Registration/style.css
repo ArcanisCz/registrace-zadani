@@ -1,0 +1,19 @@
+.formContent input{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 20px
+}
+
+.formButton button {
+  
+    margin: 10px 20px
+}
+
+.formHeader {
+    margin: 10px 20px
+}
+
+.formHeadline {
+    font-size: 1.5rem;
+}
