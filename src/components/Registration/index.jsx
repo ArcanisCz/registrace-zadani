@@ -14,15 +14,17 @@ const Registration = () => {
 
  const handleSubmit = (e) => {
   e.preventDefault() 
-  if (user.password === user.passwordConfirm) {
+  if (user.password === user.passwordConfirm && user.username !== '' && user.email !== '' && user.password !== '' && user.passwordConfirm !== '') {
     console.log(user)
-  } else {
+  } else if (user.password !== user.passwordConfirm) {
     alert('Hesla se neshodují')
-  }  
+  } else {
+    alert('Nemáte vyplněná všechna povinná pole')
+  }
  }
 
  const handleChangeEmail = (e) => {
-  if (user.name === '' && e.target.value.includes('@')) {
+  if (user.username === '' && e.target.value.includes('@')) {
     const nameToUsername = e.target.value.split('@') 
     setUser({...user, username: nameToUsername[0], email: e.target.value})
   } else {
