@@ -13,7 +13,13 @@ const Registation = () => {
 
     const handleSubmit= (e) => {
         e.preventDefault();
-        console.log(user);
+        if (user.password === user.passwordConfirm && user.username !== '' && user.email !== '' && user.password !== '' && user.passwordConfirm !== '') {
+            console.log(user)
+          } else if (user.password !== user.passwordConfirm) {
+            alert('Your password and confirmation password do not match.')
+          } else {
+            alert('Please fill out all required fields.')
+          }
     };
 
     useEffect(() => {
