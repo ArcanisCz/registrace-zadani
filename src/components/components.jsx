@@ -3,32 +3,32 @@ import React, {useState} from 'react';
 
 export const Registration = () => {
   const [user, setUser] = useState({
-    username: '',
     email: '',
+    username: '',
     password: '',
     passwordConfirm: '',
  })
 const handleInputChange = (id, value) => {
   if(id === "email"){
-    setUser(value);
+    setUser({...user, email: value});
   }
   if(id === "userName"){
-      setUser(value);
+      setUser({...user, username: value});
   }
   if(id === "password"){
-    setUser(value);
+    setUser({...user, password: value});
   }
   if(id === "confirmPassword"){
-    setUser(value);
+    setUser({...user, passwordConfirm: value});
   }
   console.log(id, value);
 }
   /* const handleInputChange = (e) => {
     
-      setUser({...user, [e.target.name]:e.target.value})
+      setUser({...user, [id]:value})
     }
-    console.log(handleInputChange(e))
-  */
+    console.log(handleInputChange(e))*/
+  
 
   const handleSubmit = (e) => {
     e.preventDefault()
