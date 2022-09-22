@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../components/Registration.css';
 
 const Registration = () => {
 
@@ -31,19 +32,23 @@ const Registration = () => {
      }
 
      return (
-        <>
+        <div className='container'>
         <h1>REGISTRATION</h1>
-        <div>
-            <div></div>
+        
+            
+
         <form className='registration-form' onSubmit={(e) => handleSubmit(e)}>
+        <div className='outer-circle'>
+            <div className='inner-circle'></div>
+            </div>
             <input type="email" placeholder="Email Address" autoFocus id="email" onChange={(e) => handleEmail(e.target.value)} />
             <input type="text" placeholder="User Name" id="user" onClick={() => handleUserName()} defaultValue={user.username}/>
             <input type="password" placeholder="Password" id="pass" onChange={(e) => setUser({...user, password: e.target.value})}/>
             <input type="password" placeholder="Password Confirm" id="passconf" onChange={(e) => setUser({...user, passwordConfirm: e.target.value})}/>
-            <button type="submit">Register</button>
+            <button type="submit">REGISTER</button>
         </form>
+        
         </div>
-        </>
      )
 
 };
