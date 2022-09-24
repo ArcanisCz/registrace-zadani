@@ -13,18 +13,18 @@ export const StyledCardContent = styled(CardContent)`
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1em;
 `;
 
 export const StyledTitle = styled.div`
   display: flex;
   justify-content: center;
-  padding-bottom: 30px;
+  padding-bottom: 2em;
 `;
 
 export const StyledButton = styled(Button)`
   background-color: ${({ theme }) => theme.color.primary.main};
-  max-width: 100px;
+  max-width: 10em;
   align-self: center;
   &:disabled {
     background-color: ${({ theme }) => theme.color.primary.light};
@@ -32,7 +32,7 @@ export const StyledButton = styled(Button)`
 `;
 
 export const StyledAlert = styled(Alert)`
-  margin-bottom: 1rem;
+  margin-bottom: 1em;
 `;
 
 export const Heading = styled.h1`
