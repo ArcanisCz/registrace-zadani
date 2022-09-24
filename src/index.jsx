@@ -9,7 +9,7 @@ import styled from "styled-components";
 const App = () => {
   const [successMessage, setSuccessMessage] = useState("");
   const onRegistration = () => {
-    setSuccessMessage("You have been successfully registered.");
+    setSuccessMessage("There you go. You're registered!");
   };
   return (
     <StyledWrapper theme={theme}>

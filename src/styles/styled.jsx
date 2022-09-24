@@ -1,7 +1,7 @@
 import React from "react";
 import {
   ThemeProvider as MuiThemeProvider,
-  StyledEngineProvider, Button, CardContent, Alert
+  StyledEngineProvider, Button, CardContent, Alert, TextField
 } from "@mui/material";
 import { ThemeProvider } from "styled-components";
 import styled from "styled-components";
@@ -29,6 +29,9 @@ export const StyledButton = styled(Button)`
   &:disabled {
     background-color: ${({ theme }) => theme.color.primary.light};
   }
+`;
+export const StyledTextField = styled(TextField)`
+  background-color: ${({ theme }) => theme.color.primary.light};
 `;
 
 export const StyledAlert = styled(Alert)`

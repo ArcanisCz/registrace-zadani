@@ -1,9 +1,8 @@
 import {
-  Card,
-  TextField,
+  Card
 } from "@mui/material";
 import React, { useState, useEffect } from "react";
-import { StyledCardContent, StyledButton, StyledForm, StyledTitle, Heading } from '../styles/styled';
+import { StyledCardContent, StyledButton, StyledForm, StyledTitle, Heading, StyledTextField } from '../styles/styled';
 
 export const Registration = ({ onRegistration }) => {
   const [user, setUser] = useState({
@@ -64,7 +63,7 @@ export const Registration = ({ onRegistration }) => {
           <Heading>REGISTRATION</Heading>
         </StyledTitle>
         <StyledForm onSubmit={onSubmit}>
-          <TextField
+          <StyledTextField
             label="Email Address"
             value={user.email}
             onChange={onChangeEmail}
@@ -75,18 +74,18 @@ export const Registration = ({ onRegistration }) => {
                 : ""
             }
           />
-          <TextField
+          <StyledTextField
             label="User Name"
             value={user.username}
             inputProps={{ readOnly: true }}
           />
-          <TextField
+          <StyledTextField
             label="Password"
             value={user.password}
             type="password"
             onChange={(e) => setUser({ ...user, password: e.target.value })}
           />
-          <TextField
+          <StyledTextField
             label="Confirm Password"
             value={user.passwordConfirm}
             type="password"
