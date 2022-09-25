@@ -8,29 +8,34 @@ export const Registration = () => {
     password: '',
     passwordConfirm: '',
  })
+
 const handleInputChange = (id, value) => {
+ let name = "";
   if(id === "email"){
-    setUser({...user, email: value});
+      setUser({...user, email: value});
+      if(value.includes("@") === true){
+      let indexOfAt = value.search("@") // vrací index na kterém je @
+      name = value.slice(0, indexOfAt)
+      console.log(value)
+      console.log(name)
+    } 
+      else { 
+      alert("Chybný formát emailu.")
+      }
   }
   if(id === "userName"){
-      setUser({...user, username: value});
+      setUser({...user, username: name}); // tady jsem to nevymyslela... :-(.. 
+      console.log(value)
+      console.log({...user, username: name})
   }
   if(id === "password"){
     setUser({...user, password: value});
   }
   if(id === "confirmPassword"){
     setUser({...user, passwordConfirm: value});
-  }
-  console.log(id, value);
-}
-  /* const handleInputChange = (e) => {
-    
-      setUser({...user, [id]:value})
-    }
-    console.log(handleInputChange(e))*/
-  
+}}
 
-  const handleSubmit = (e) => {
+ const handleSubmit = (e) => {
     e.preventDefault()
     console.log(user)
   }
@@ -38,7 +43,7 @@ const handleInputChange = (id, value) => {
   <div className='box'>
   <h1>REGISTRATION</h1>
   <div className='form-box'>
-  <form className='form'>
+  <form className='form' onSubmit={handleSubmit}>
     <input 
     type= "email" 
     name= "email" 
@@ -71,7 +76,8 @@ const handleInputChange = (id, value) => {
     value={user.passwordConfirm}
     onChange={(e) => handleInputChange("confirmPassword", e.target.value)}></input>
 
-    <button onClick={() => handleSubmit()} type="submit">REGISTER</button>
+    <button type="submit"
+   >REGISTER</button>
   </form>
   </div>
   </div>
