@@ -27,9 +27,9 @@ const Registration = () => {
         if (user.password !== user.passwordConfirm) {
          alert("Passwords do not match.");
             return;}
-            
+
         alert("Thanks for your registration.");
-        console.log({user})
+            return console.log({user});
      }
 
      return (
