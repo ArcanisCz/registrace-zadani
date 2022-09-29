@@ -10,25 +10,26 @@ const Registration = () => {
         passwordConfirm: "",
      })
 
-     const handleEmail = (typedEmail) => {
-        if (typedEmail.includes("@")) {
-        setUser({...user, email: typedEmail});
-        }
-     }
-
-     const handleUserName = () => {
-        if (user.email !== null) {
-        const email = user.email;
-        setUser({...user, username: email.slice(0, email.indexOf("@"))})}
-        else alert("Use valid email address, please.")
+     const handleEmail = (event) => {
+        setUser({...user, email: event.target.value});
      }
 
      const handleSubmit = (e) => {
         e.preventDefault();
-        if (user.password === user.passwordConfirm)
-        {console.log({user})
-        alert("Thanks for your registration.")}
-        else alert("Passwords do not match.")
+        if (user.email === "" || !user.email.includes("@")) {
+         alert("Use valid email address, please.");
+            return};
+
+        if (user.username === "") {
+            const email = user.email;
+            setUser({...user, username: email.slice(0, email.indexOf("@"))})};
+
+        if (user.password !== user.passwordConfirm) {
+         alert("Passwords do not match.");
+            return;}
+            
+        alert("Thanks for your registration.");
+        console.log({user})
      }
 
      return (
@@ -41,10 +42,10 @@ const Registration = () => {
         <div className='outer-circle'>
             <div className='inner-circle'></div>
             </div>
-            <input type="email" placeholder="Email Address" autoFocus id="email" onChange={(e) => handleEmail(e.target.value)} />
-            <input type="text" placeholder="User Name" id="user" onClick={() => handleUserName()} defaultValue={user.username}/>
-            <input type="password" placeholder="Password" id="pass" onChange={(e) => setUser({...user, password: e.target.value})}/>
-            <input type="password" placeholder="Password Confirm" id="passconf" onChange={(e) => setUser({...user, passwordConfirm: e.target.value})}/>
+            <input type="email" placeholder="Email Address" autoFocus id="email" onChange={handleEmail} value={user.email}/>
+            <input type="text" placeholder="User Name" id="user" onChange={(e) => setUser({...user, username: e.target.value})} value={user.username}/>
+            <input type="password" placeholder="Password" id="pass" onChange={(e) => setUser({...user, password: e.target.value})} value={user.password}/>
+            <input type="password" placeholder="Password Confirm" id="passconf" onChange={(e) => setUser({...user, passwordConfirm: e.target.value})} value={user.passwordConfirm}/>
             <button type="submit">REGISTER</button>
         </form>
         
