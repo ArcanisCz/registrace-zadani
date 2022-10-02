@@ -1,5 +1,6 @@
 
 import React, {useState} from 'react';
+import './style.css';
 
 export const Registration = () => {
   const [user, setUser] = useState({
@@ -10,17 +11,13 @@ export const Registration = () => {
  })
 const handleInputChange = (id, value) => {
   if(id === "email"){
-        setUser({...user, email: value})
-      console.log(value);
-  } 
-  
-  let indexOfAt = value.search("@")// vrací index na kterém je @
-  let name =setUser({...user, username: value.slice(0, indexOfAt)})
-  
-  if(id === "username") {   
-   
-   setUser(name)
-   console.log(name)
+     setUser({...user, email: value, username: value.slice(0,  value.search("@")) 
+    })
+      console.log(value)
+ } 
+  if(id === "userName") {
+  setUser({...user, username: value})
+   console.log(value)
   }
  
    if(id === "password"){
@@ -31,14 +28,23 @@ const handleInputChange = (id, value) => {
     setUser({...user, passwordConfirm: value});
     console.log(value)
 }}
-
+const validPassword = () => {
+  if (user.password === user.passwordConfirm) {
+    console.log("Správné heslo.")
+  }
+  else {
+    alert("Hesla se neshodují!")
+  }
+}
  const handleSubmit = (e) => {
     e.preventDefault()
     console.log(user)
+    validPassword()
   }
   return (
   <div className='box'>
   <h1>REGISTRATION</h1>
+  
   <div className='form-box'>
   <form className='form' onSubmit={handleSubmit}>
     <input 
@@ -75,7 +81,7 @@ const handleInputChange = (id, value) => {
     onChange={(e) => handleInputChange("confirmPassword", e.target.value)
     }></input>
 
-    <button type="submit">REGISTER</button>
+    <button type="submit" className='press-btn'>REGISTER</button>
   </form>
   </div>
   </div>
