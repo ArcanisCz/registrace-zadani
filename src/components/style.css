@@ -1,0 +1,35 @@
+.box {
+  text-align: center;
+  max-width: 260px;
+  margin-left: 70px;
+  margin-top: 40px;
+}
+h1 {
+  color:rgb(62, 88, 100);
+  font-size: 1rem;
+}
+.form{
+  border-radius: 5px;
+  box-shadow:
+  5px 10px 10px 5px #c9c7c7;
+  padding-top: 80px;
+  padding-bottom: 10px;
+  
+}
+
+input, 
+.press-btn {
+  margin: 5px;
+  padding: 5px;
+  background-color: rgb(62, 88, 100);
+  border-radius: 5px;
+  
+}
+input::placeholder{
+  color: #d9d9d9;
+}
+
+.press-btn {
+  border-radius: 10px;
+  color: #d9d9d9;
+}
